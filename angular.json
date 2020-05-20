@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "mi-catalogo"
+    }
+  },
+  "defaultProject": "mi-catalogo",
+  "cli": {
+    "analytics": "dff6c7ce-0aba-44d0-a638-95135aa5ec99"
+  }
 }
