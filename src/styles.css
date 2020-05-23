@@ -3,7 +3,8 @@
 body, html {
     margin: 0;
     font-family: 'Kanit', sans-serif;
-    background-color: #7d5e2a;
+    background-color: #fdfdfd;
+    justify-content: center;
 }
 
 footer {

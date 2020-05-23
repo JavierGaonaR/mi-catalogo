@@ -1,0 +1,37 @@
+.container {
+    /* display: flex;
+    flex-direction: column; */
+    display: block;
+    justify-content: center;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 85px;
+    min-width: 300px;
+    margin: 20px 180px;
+    
+
+    border: solid  rgba(0, 41, 82, 0.062);
+    border-width: 3px;
+    border-radius: 15px;
+
+    font-size: 20px;
+    background-color: #fff;
+}
+
+.img {
+    margin: 18px;
+}
+
+.data-car {
+    margin: 18px;
+}
+
+img {
+    width: 28px;
+}
+
