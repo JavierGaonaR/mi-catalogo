@@ -1,8 +1,8 @@
 .container {
-    /* display: flex;
-    flex-direction: column; */
     display: block;
     justify-content: center;
+
+    width: 100%;
 }
 
 .item {
@@ -12,14 +12,13 @@
 
     height: 85px;
     min-width: 300px;
-    margin: 20px 180px;
+    margin: 20px 10%;
     
 
     border: solid  rgba(0, 41, 82, 0.062);
     border-width: 3px;
     border-radius: 15px;
 
-    font-size: 20px;
     background-color: #fff;
 }
 
@@ -28,6 +27,7 @@
 }
 
 .data-car {
+    font-size: 20px;
     margin: 18px;
 }
 
