@@ -1,4 +1,4 @@
-.container {
+.list {
     display: block;
     justify-content: center;
 
@@ -22,8 +22,14 @@
     background-color: #fff;
 }
 
+button {
+    border: 0px;
+    background-color: transparent;
+}
+
 .img {
     margin: 18px;
+    cursor: pointer;
 }
 
 .data-car {
@@ -34,4 +40,3 @@
 img {
     width: 28px;
 }
-
