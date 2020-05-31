@@ -1,1 +1,33 @@
-<p>table works!</p>
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Submarca</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Modelo</th>
+      <th scope="col" style="width:3.5%"></th>
+      <th scope="col" style="width:3.5%"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let auto of autos">
+      <th scope="row">#id</th>
+      <td>{{ auto.marca }}</td>
+      <td>{{ auto.submarca }}</td>
+      <td>{{ auto.descripcion }}</td>
+      <td>{{ auto.modelo }}</td>
+      <td>
+          <img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="trash">
+      </td>
+      <td>
+          <img src="https://image.flaticon.com/icons/svg/1159/1159633.svg" alt="update">
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
+    </ngb-pagination>
+  </div>
