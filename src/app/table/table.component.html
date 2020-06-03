@@ -11,29 +11,23 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let auto of autos">
-      <th scope="row"> {{auto.id}} </th>
+    <tr *ngFor="let auto of autos | slice: (page - 1) * pageSize : (page - 1) * pageSize + pageSize">
+      <th scope="row"> {{auto._id}} </th>
       <td>{{ auto.marca }}</td>
       <td>{{ auto.submarca }}</td>
       <td>{{ auto.descripcion }}</td>
-      <td>{{ auto.modelo }}</td>
-      <td>
-          <img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="trash">
-      </td>
+      <td>{{ auto.modelos }}</td>
       <td>
           <img src="https://image.flaticon.com/icons/svg/1159/1159633.svg" alt="update">
+      </td>
+      <td>
+        <img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="trash">
       </td>
     </tr>
     </tbody>
   </table>
 
-  <div class="d-flex justify-content-between p-2">
-    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
-    </ngb-pagination>
-  
-    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
-      <option [ngValue]="2">2 items per page</option>
-      <option [ngValue]="4">4 items per page</option>
-      <option [ngValue]="6">6 items per page</option>
-    </select>
-  </div>
+  <ngb-pagination
+  [(page)]="page"
+  [pageSize]="pageSize"
+  [collectionSize]="autos.length"></ngb-pagination>
