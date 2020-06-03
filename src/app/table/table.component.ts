@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
 import { Automovil } from 'src/models';
-import { AUTOMOVILES } from 'src/data';
+// import { AUTOMOVILES } from 'src/data';
+import { AutosService } from '../services/autosService/autos.service';
 
 @Component({
   selector: 'app-table',
@@ -9,20 +11,19 @@ import { AUTOMOVILES } from 'src/data';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
+ autos : Automovil[];
 
   page = 1;
-  pageSize = 12;
-  collectionSize = AUTOMOVILES.length;
+  pageSize = 10;
+  collectionSize: number;
 
-  constructor() { }
+  constructor( private autoService: AutosService ) { }
 
   ngOnInit(): void {
-  }
-
-  get autos(): Automovil[] {
-    return AUTOMOVILES
-      .map((auto, i) => ({id: i + 1, ...auto}))
-      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+    this.autoService.getAutos().subscribe((response) => {
+      this.autos = response.data;
+      this.collectionSize = response.data.length;
+    })
   }
 
 }

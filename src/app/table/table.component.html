@@ -12,7 +12,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let auto of autos">
-      <th scope="row">#id</th>
+      <th scope="row"> {{auto.id}} </th>
       <td>{{ auto.marca }}</td>
       <td>{{ auto.submarca }}</td>
       <td>{{ auto.descripcion }}</td>
@@ -26,8 +26,14 @@
     </tr>
     </tbody>
   </table>
-  
+
   <div class="d-flex justify-content-between p-2">
     <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
     </ngb-pagination>
+  
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+      <option [ngValue]="2">2 items per page</option>
+      <option [ngValue]="4">4 items per page</option>
+      <option [ngValue]="6">6 items per page</option>
+    </select>
   </div>

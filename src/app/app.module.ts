@@ -9,6 +9,8 @@ import { ListComponent } from './list/list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TableComponent } from './table/table.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http'; 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
