@@ -1,3 +1,5 @@
+<button type="button" class="btn btn-secondary" (click)="openAdd()">Añadir</button>
+
 <table class="table table-striped">
     <thead>
     <tr>
@@ -18,7 +20,7 @@
       <td>{{ auto.descripcion }}</td>
       <td>{{ auto.modelos }}</td>
       <td>
-          <img src="https://image.flaticon.com/icons/svg/1159/1159633.svg" alt="update">
+          <img (click)="openEdit(auto)" src="https://image.flaticon.com/icons/svg/1159/1159633.svg" alt="update">
       </td>
       <td>
         <img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="trash">
