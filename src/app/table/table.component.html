@@ -15,10 +15,10 @@
     <tbody>
     <tr *ngFor="let auto of autos | slice: (page - 1) * pageSize : (page - 1) * pageSize + pageSize">
       <th scope="row"> {{auto._id}} </th>
-      <td>{{ auto.marca }}</td>
-      <td>{{ auto.submarca }}</td>
-      <td>{{ auto.descripcion }}</td>
-      <td>{{ auto.modelos }}</td>
+      <td>{{ auto.marca | uppercase }}</td>
+      <td>{{ auto.submarca | uppercase }}</td>
+      <td>{{ auto.descripcion | uppercase }}</td>
+      <td>{{ auto.modelos | modelos }}</td>
       <td>
           <img (click)="openEdit(auto)" src="https://image.flaticon.com/icons/svg/1159/1159633.svg" alt="update">
       </td>
@@ -29,7 +29,7 @@
     </tbody>
   </table>
 
-  <ngb-pagination
+  <ngb-pagination class="pagination"
   [(page)]="page"
   [pageSize]="pageSize"
   [collectionSize]="autos?.length"></ngb-pagination>

@@ -43,7 +43,7 @@ export class TableComponent implements OnInit {
     })
   }
 
-  openAdd(auto: Automovil) {
+  openAdd() {
     const modalRef = this.modalService.open(ModalAddUpdateComponent, { centered: true});
     modalRef.componentInstance.accion = 'Añadir';
 

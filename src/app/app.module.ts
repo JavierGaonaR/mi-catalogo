@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ModalAddUpdateComponent } from './modal-add-update/modal-add-update.component';
 import { ModalConfirmComponent } from './modal-confirm/modal-confirm.component';
+import { ModelosPipe } from './pipes/modelos.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ModalConfirmComponent } from './modal-confirm/modal-confirm.component';
     TableComponent,
     PageNotFoundComponent,
     ModalAddUpdateComponent,
-    ModalConfirmComponent
+    ModalConfirmComponent,
+    ModelosPipe
   ],
   imports: [
     BrowserModule,
