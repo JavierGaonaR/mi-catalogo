@@ -1,7 +1,7 @@
 <button type="button" class="btn btn-secondary" (click)="openAdd()">Añadir</button>
 
 <table class="table table-striped">
-    <thead>
+  <thead>
     <tr>
       <th scope="col">id</th>
       <th scope="col">Marca</th>
@@ -11,8 +11,8 @@
       <th scope="col" style="width:3.5%"></th>
       <th scope="col" style="width:3.5%"></th>
     </tr>
-    </thead>
-    <tbody>
+  </thead>
+  <tbody>
     <tr *ngFor="let auto of autos | slice: (page - 1) * pageSize : (page - 1) * pageSize + pageSize">
       <th scope="row"> {{auto._id}} </th>
       <td>{{ auto.marca | uppercase }}</td>
@@ -20,16 +20,20 @@
       <td>{{ auto.descripcion | uppercase }}</td>
       <td>{{ auto.modelos | modelos }}</td>
       <td>
-          <img (click)="openEdit(auto)" src="https://image.flaticon.com/icons/svg/1159/1159633.svg" alt="update">
+        <img (click)="openEdit(auto)" src="https://image.flaticon.com/icons/svg/1159/1159633.svg" alt="update">
       </td>
       <td>
         <img (click)="openDelete(auto)" src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="trash">
       </td>
     </tr>
-    </tbody>
-  </table>
+  </tbody>
+</table>
 
-  <ngb-pagination class="pagination"
-  [(page)]="page"
-  [pageSize]="pageSize"
-  [collectionSize]="autos?.length"></ngb-pagination>
+<div class="d-flex justify-content-center" *ngIf="displayData">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<ngb-pagination class="pagination" [(page)]="page" [pageSize]="pageSize" [collectionSize]="autos?.length">
+</ngb-pagination>

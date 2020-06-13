@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Automovil } from 'src/models';
 import { AutosService } from '../services/autosService/autos.service';
@@ -13,23 +13,31 @@ import { ModalConfirmComponent } from '../modal-confirm/modal-confirm.component'
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
- autos : Automovil[];
+  autos: Automovil[];
+
+  displayData: boolean;
 
   page = 1;
   pageSize = 10;
   collectionSize: number;
 
-  constructor( private autoService: AutosService, private modalService: NgbModal) { }
+  constructor(private autoService: AutosService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
+    this.displayData = true;
+
     this.autoService.getAutos().subscribe((response) => {
-      this.autos = response.data;
-      this.collectionSize = response.data.length;
+      setTimeout(() => {
+        this.displayData = false;
+        this.autos = response.data;
+        this.collectionSize = response.data.length;
+      }, 1300)
+
     })
   }
 
   openEdit(auto: Automovil) {
-    const modalRef = this.modalService.open(ModalAddUpdateComponent, { centered: true});
+    const modalRef = this.modalService.open(ModalAddUpdateComponent, { centered: true });
     modalRef.componentInstance.auto = auto;
     modalRef.componentInstance.accion = 'Editar';
 
@@ -38,13 +46,13 @@ export class TableComponent implements OnInit {
         console.log(response);
       })
     },
-    (reason) => {
-      console.log(reason);
-    })
+      (reason) => {
+        console.log(reason);
+      })
   }
 
   openAdd() {
-    const modalRef = this.modalService.open(ModalAddUpdateComponent, { centered: true});
+    const modalRef = this.modalService.open(ModalAddUpdateComponent, { centered: true });
     modalRef.componentInstance.accion = 'Añadir';
 
     modalRef.result.then((auto) => {
@@ -52,13 +60,13 @@ export class TableComponent implements OnInit {
         console.log(response);
       })
     },
-    (reason) => {
-      console.log(reason);
-    })
+      (reason) => {
+        console.log(reason);
+      })
   }
 
   openDelete(auto: Automovil) {
-    const modalRef = this.modalService.open(ModalConfirmComponent, { centered: true});
+    const modalRef = this.modalService.open(ModalConfirmComponent, { centered: true });
     modalRef.componentInstance.auto = auto;
 
     modalRef.result.then((auto) => {
