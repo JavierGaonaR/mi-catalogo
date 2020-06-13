@@ -10,3 +10,11 @@ body, html {
 footer {
     background-color: #231903;
 }
+
+.ng-valid{
+    border-left: 5px solid green;
+}
+
+.ng-invalid:not(form) {
+    border-left: 5px solid red;
+}

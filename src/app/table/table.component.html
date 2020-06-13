@@ -23,7 +23,7 @@
           <img (click)="openEdit(auto)" src="https://image.flaticon.com/icons/svg/1159/1159633.svg" alt="update">
       </td>
       <td>
-        <img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="trash">
+        <img (click)="openDelete(auto)" src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="trash">
       </td>
     </tr>
     </tbody>
@@ -32,4 +32,4 @@
   <ngb-pagination
   [(page)]="page"
   [pageSize]="pageSize"
-  [collectionSize]="autos.length"></ngb-pagination>
+  [collectionSize]="autos?.length"></ngb-pagination>

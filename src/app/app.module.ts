@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HttpClientModule } from '@angular/common/http'; 
 import { FormsModule } from '@angular/forms';
 import { ModalAddUpdateComponent } from './modal-add-update/modal-add-update.component';
+import { ModalConfirmComponent } from './modal-confirm/modal-confirm.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ModalAddUpdateComponent } from './modal-add-update/modal-add-update.com
     ListComponent,
     TableComponent,
     PageNotFoundComponent,
-    ModalAddUpdateComponent
+    ModalAddUpdateComponent,
+    ModalConfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,6 @@ import { ModalAddUpdateComponent } from './modal-add-update/modal-add-update.com
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ModalAddUpdateComponent]
+  entryComponents: [ModalAddUpdateComponent, ModalConfirmComponent]
 })
 export class AppModule { }
