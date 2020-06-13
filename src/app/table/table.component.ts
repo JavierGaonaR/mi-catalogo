@@ -25,14 +25,14 @@ export class TableComponent implements OnInit {
 
   ngOnInit(): void {
     this.displayData = true;
+    this.page =+ sessionStorage.getItem("currentPage");
 
     this.autoService.getAutos().subscribe((response) => {
       setTimeout(() => {
         this.displayData = false;
         this.autos = response.data;
         this.collectionSize = response.data.length;
-      }, 1300)
-
+      }, 1000)
     })
   }
 
@@ -43,6 +43,8 @@ export class TableComponent implements OnInit {
 
     modalRef.result.then((auto) => {
       this.autoService.putAutos(auto).subscribe((response) => {
+        sessionStorage.setItem("currentPage", this.page.toString());
+        this.ngOnInit();
         console.log(response);
       })
     },
@@ -57,6 +59,8 @@ export class TableComponent implements OnInit {
 
     modalRef.result.then((auto) => {
       this.autoService.postAutos(auto).subscribe((response) => {
+        sessionStorage.setItem("currentPage", this.page.toString());
+        this.ngOnInit();
         console.log(response);
       })
     },
@@ -71,6 +75,8 @@ export class TableComponent implements OnInit {
 
     modalRef.result.then((auto) => {
       this.autoService.deleteAutos(auto).subscribe((response) => {
+        sessionStorage.setItem("currentPage", this.page.toString());
+        this.ngOnInit();
         console.log(response);
       })
     }, (reason) => {

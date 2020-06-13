@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mi-catalogo';
+
+  ngOnInit(): void {
+    sessionStorage.setItem("currentPage", "1");
+    
+  }
 }

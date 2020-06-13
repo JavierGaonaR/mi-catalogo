@@ -2,6 +2,13 @@
 
 <table class="table table-striped">
   <thead>
+    <tr *ngIf="displayData">
+      <th colspan="7">
+        <div>
+          <ngb-progressbar [value]="100" type="dark"  [animated]='true' [striped]='true'></ngb-progressbar>
+        </div>
+      </th>
+    </tr>
     <tr>
       <th scope="col">id</th>
       <th scope="col">Marca</th>
@@ -29,11 +36,6 @@
   </tbody>
 </table>
 
-<div class="d-flex justify-content-center" *ngIf="displayData">
-  <div class="spinner-border" role="status">
-    <span class="sr-only">Loading...</span>
-  </div>
-</div>
 
 <ngb-pagination class="pagination" [(page)]="page" [pageSize]="pageSize" [collectionSize]="autos?.length">
 </ngb-pagination>
