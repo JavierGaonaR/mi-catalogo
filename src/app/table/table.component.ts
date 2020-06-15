@@ -17,6 +17,8 @@ export class TableComponent implements OnInit {
 
   displayData: boolean;
 
+  filterSearch: any;
+
   page = 1;
   pageSize = 10;
   collectionSize: number;

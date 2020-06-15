@@ -13,3 +13,8 @@ button, .pagination {
     margin: 25px;
 }
 
+div.input-group {
+    width: 25%;
+    margin: 0px 0px 25px 25px;
+    
+}

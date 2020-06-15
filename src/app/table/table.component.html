@@ -1,11 +1,20 @@
 <button type="button" class="btn btn-secondary" (click)="openAdd()">Añadir</button>
 
+<div class="input-group">
+  <div class="input-group-prepend">
+    <div class="input-group-text">
+      <img src="https://img.icons8.com/android/48/000000/search.png" />
+    </div>
+  </div>
+  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Buscar" [(ngModel)]="filterSearch">
+</div>
+
 <table class="table table-striped">
   <thead>
     <tr *ngIf="displayData">
       <th colspan="7">
         <div>
-          <ngb-progressbar [value]="100" type="dark"  [animated]='true' [striped]='true'></ngb-progressbar>
+          <ngb-progressbar [value]="100" type="dark" [animated]='true' [striped]='true'></ngb-progressbar>
         </div>
       </th>
     </tr>
@@ -20,7 +29,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let auto of autos | slice: (page - 1) * pageSize : (page - 1) * pageSize + pageSize">
+    <tr *ngFor="let auto of autos | filter: filterSearch | slice: (page - 1) * pageSize : (page - 1) * pageSize + pageSize">
       <th scope="row"> {{auto._id}} </th>
       <td>{{ auto.marca | uppercase }}</td>
       <td>{{ auto.submarca | uppercase }}</td>
