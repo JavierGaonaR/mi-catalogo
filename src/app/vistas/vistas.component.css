@@ -27,3 +27,11 @@
     border: solid  rgba(0, 41, 82, 0.062);
     border-width: 1px 1px 0px 1px;
 }
+
+a.action:hover {
+    background-color: rgb(228, 226, 226);
+}
+
+a.active {
+    background-color: rgb(228, 226, 226);
+}

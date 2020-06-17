@@ -1,0 +1,15 @@
+.box-messages {
+    background-color: #333333;
+    color: whitesmoke;
+    margin: 0 auto;
+    width: 70%;
+    height: 550px;
+    margin-top: 25px;
+    padding: 10px;
+    overflow: scroll;
+    font-family: 'Consolas', monospace;
+}
+
+.message {
+    margin: 0;
+}

@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ModalAddUpdateComponent } from './modal-add-update/modal-add-update.component';
 import { ModalConfirmComponent } from './modal-confirm/modal-confirm.component';
 import { ModelosPipe } from './pipes/modelos.pipe';
+import { LogComponent } from './log/log.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ModelosPipe } from './pipes/modelos.pipe';
     PageNotFoundComponent,
     ModalAddUpdateComponent,
     ModalConfirmComponent,
-    ModelosPipe
+    ModelosPipe,
+    LogComponent
   ],
   imports: [
     BrowserModule,
